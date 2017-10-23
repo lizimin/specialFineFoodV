@@ -1,0 +1,21 @@
+<view class="container">
+	<view class="header">
+		<image class="avatar" src="{{userInfo.avatarUrl}}" />
+		<view class="nickname">{{userInfo.nickName}}</view>
+	</view>
+	<view class="section">
+		<view class="line judgement"> 
+    <navigator url="../cart/index" open-type="switchTab" hover-class="navigator-hover">我的购餐车</navigator>
+    </view>
+		<view class="line judgement">
+    <navigator url="../address/list/index" hover-class="navigator-hover">我的地址</navigator>
+    </view>
+		<view class="line judgement"> 
+    <navigator url="../order/list/index" hover-class="navigator-hover">我的订单</navigator>
+    </view>
+	</view>
+	<view class="section">
+		<view class="line judgement">帮助与反馈</view>
+		<view class="line judgement">在线客服<text class="tl">9:00 - 23:00</text></view>
+	</view>
+</view>

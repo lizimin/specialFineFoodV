@@ -1,0 +1,15 @@
+<view class="sign-page">
+        <view class="module-no">
+            <view class="tips" style='font-size:45rpx;'>
+                <text>{{oneItem.title}}</text>
+            </view>
+            <view class="system-time" style='margin-top:30rpx'>
+                <view class="tit" style="font-family:'KaiTi'">
+                    <text>{{oneItem.ftitle}}</text>
+                </view>
+                <view class="num"  style="font-size:35rpx;text-indent:1cm;margin-top:30rpx">
+                    <text>{{oneItem.con}}</text>
+                </view>
+            </view> 
+        </view>     
+</view>

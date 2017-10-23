@@ -1,0 +1,51 @@
+<view class="address">
+    <view class="weui-panel">
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text" bindtap="addressChoose">
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{ address.item.name }} {{ address.item.gender === '1' ? '先生' : '女士' }} {{ address.item.tel }}</view>
+                <view class="weui-media-box__desc">{{ address.item.address }}</view>
+                <view class="addr">
+                    <image class="icon" src="/assets/images/iconfont-addr-default.png" />
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="weui-form-preview">
+    <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">订单总价</view>
+            <view class="weui-form-preview__value_in-hd">¥ {{ (carts.totalAmount*1+carts.firstrate)*(carts.secondrate==0?1:carts.secondrate*0.1) }}</view>
+        </view>
+    </view>
+    <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item" wx:for="{{ carts.items }}" wx:key="">
+            <view class="weui-form-preview__label">{{ item.goods.name }}</view>
+            <view class="weui-form-preview__value">x{{ item.num }} ¥ {{ item.goods.price}}+{{ item.goods.sold}}</view>
+        </view>
+    </view>
+
+ <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">送餐费</view>
+            <view class="weui-form-preview__value_in-hd">¥ {{ carts.firstrate }}</view>
+        </view>
+    </view>
+
+ <view class="weui-form-preview__hd" hidden="{{ carts.secondrate==0 }}">
+        <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">优惠折扣</view>
+            <view class="weui-form-preview__value_in-hd"> {{ carts.secondrate }}折</view>
+        </view>
+    </view>
+    <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <textarea name="des"  bindInput="desInputEvent"  class="weui-textarea" placeholder="备注" style="height: 3.3em;border:0.5px solid #D9D9D9;" />
+            </view>
+        </view>
+    <view class="weui-form-preview__ft">
+        <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="addOrder">提交订单</navigator>
+    </view>
+</view>

@@ -1,0 +1,16 @@
+/* page/address/add/index.wxss */
+
+@import '/assets/styles/weui.wxss';
+@import '/assets/styles/prompt.wxss';
+@import '/assets/styles/skyvow.wxss';
+
+.weui-cells:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: none;
+  color: #D9D9D9;
+}

@@ -1,0 +1,61 @@
+<view class="container">
+<!--
+	<view class="header {{scrollDown?'scrolled':''}}">
+		<view class="location ellipsis" bindtap="toNearby">
+			<image class="icon" src="/imgs/index/icon_location.png"/>
+			{{address}}
+		</view>
+		<view class="search" bindtap="tapSearch">
+			<image class="icon" src="/imgs/index/icon_search.png"/>
+			<i class="fa fa-home"></i>
+			烤鸭
+		</view>
+	</view>
+-->
+	<scroll-view scroll-y="true" scroll-into-view="{{scrollIntoView}}" bindscroll="onScroll">
+		<swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+			<block wx:for="{{banners}}" wx:key="id">
+				<swiper-item>
+        <navigator url="{{item.url}}" hover-class="navigator-hover" style="display:inline"><image  data-id="{{index}}" src="{{serverCfg.url}}{{item.img}}"/></navigator>
+				</swiper-item>
+			</block>
+		</swiper>
+
+		<swiper class="section icons" autoplay="" interval="" duration="500">
+			<swiper-item>
+				<view class="icon" wx:for="{{icons}}" wx:for-item="icon" wx:key="id" bindtap="toNearby">
+         <navigator url="/page/shoplist/index?cat={{icon.id}}&catname={{icon.name}}" hover-class="navigator-hover">
+					<image src="/imgs/index/icon_{{index}}.jpg" style="display:block;"/>
+					<text>{{icon.name}}</text>
+         </navigator>
+				</view>
+			</swiper-item>
+		</swiper>
+
+  		<view class="section section-big preferred">
+			<view class="title">附近商家</view>
+<!--index.wxml-->
+    <view class="container menu_container">
+    <block wx:for-items="{{shopsList}}" wx:for-item="mItem" wx:key="mItem"> 
+    <navigator url="../shop/shop?id={{mItem.id}}" hover-class="navigator-hover">
+        <view class="material_item" bindtap="tapMaterialItem" id="{{mItem.id}}" data-material="{{mItem.title}}">
+            <block wx:if="{{mItem.statu != 0}}">
+                <view class="flower-icon">
+                    <text class="flower-num"></text>
+                </view>
+            </block>
+            <image src="{{serverCfg.url}}{{mItem.img}}" data-src="{{serverCfg.url}}{{mItem.img}}" class="cs-img"> </image>
+            <view class="content_box">
+                <view class="cs-text-title">{{mItem.title}}</view>
+
+                <progress percent="{{mItem.rank}}" stroke-width="6" class="cs-progress" color="#1ECFA7"/>
+                <text class="cs-text">距离：{{mItem.len}}km</text>
+            </view>
+        </view>
+      </navigator>
+    </block>
+    </view>
+   <!--index.wxml.end-->
+</view>
+	</scroll-view>
+</view>
