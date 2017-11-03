@@ -1,0 +1,49 @@
+<!--pages/order/addOrder/index.wxml-->
+<!-- 选择收货地址 -->
+<view class='addAddress'>
+   <view class='box' bindtap='choseAddress'>
+      <image src='/imgs/add_icon.png'></image>
+      <text class='word'>选择收货地址</text>
+      <text class='arrow'>></text>
+   </view>
+    <view class='box line'>
+      <image src='/imgs/time_icon.png'></image>
+      <text class='word time'>立即送出(大约10：30送达）</text>
+      <text class='arrow'>></text>
+   </view>
+</view><!--addAddress结束-->
+<!-- 点餐内容 -->
+<view class='foodBox'>
+    <view class='food'>
+        <view class='img'><image src='/imgs/food1.jpg'></image></view>
+        <view class='name'>
+            <text>酸辣土豆丝</text>
+            <text class='number'>x1</text>
+        </view>
+        <view class='price'>￥10</view>
+    </view><!--food-->
+    <view class='food'>
+        <view class='img'><image src='/imgs/food1.jpg'></image></view>
+        <view class='name'>
+            <text>麻婆豆腐</text>
+            <text class='number'>x1</text>
+        </view>
+        <view class='price'>￥10</view>
+    </view><!--food-->
+</view><!--foodBox结束-->
+<!-- 餐盒费，配送费 -->
+<view class='fee'>
+    <view >
+        餐盒费
+        <text>￥2</text>
+    </view>
+    <view class='send'>
+        配送费
+        <text>￥2</text>
+    </view>
+</view>
+<!-- 提交订单 -->
+<view class="submitOrder">
+   <view class='sumPrice'>合计<text>￥17.5</text></view>
+   <view class='order'>提交订单</view>
+</view>

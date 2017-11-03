@@ -1,0 +1,11 @@
+<!--pages/shop/index.wxml-->
+<view class='bg'>
+  <image src='/imgs/shop_bg.jpg'></image>
+</view>
+<view class='form'>
+   <view class='name'><image src='/imgs/name.png'></image><input type='text' placeholder='姓名'/></view>
+   <view class='name'><image src='/imgs/phone.png'></image><input type='text' placeholder='电话'/></view>
+   <view class='name'><image src='/imgs/message.png'></image><input type='text' placeholder='留言'/></view>
+   <view class='btn'>提交申请</view>
+</view>
+

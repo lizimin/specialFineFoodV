@@ -1,0 +1,16 @@
+/* pages/address/addressList/index.wxss */
+page{background: #efefef;}
+.addAddress{font-size:28rpx;margin:20rpx 0;background: #fff;}
+.addAddress image{width:50rpx;height:50rpx;}
+.addAddress .box{display: flex;padding:25rpx;position: relative;}
+.addAddress .box text.arrow{text-align: right;position: absolute;top:33rpx;right:61rpx;}
+.addAddress .box .word{display:flex;justify-content: center;margin-left:3%;position: relative;top:8rpx;}
+.addAddress .line{border-top:1px solid #e5e5e5;}
+.addAddress .line .time{color:#228bf4}
+/* 地址列表 */
+.list{background: #fff;width:91.5%;padding:0 4%;font-size:28rpx;color:#333;border-top:1px solid #dadada;border-bottom:1px solid #dadada;}
+.list .address{padding:15rpx 0;position: relative;border-bottom:1px solid #dadada;}
+.list .address view:first-child{margin-bottom:10rpx;}
+.list .address:last-child{border-bottom:none;}
+.list .address .img{position: absolute;top:34rpx;right:0rpx;}
+.list .address .img image{width:50rpx;height:50rpx;}

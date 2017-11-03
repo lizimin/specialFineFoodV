@@ -1,0 +1,61 @@
+<!--index.wxml-->
+
+<!-- 轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='height:142px;'>
+  <block wx:for="{{imgUrls}}" wx:key="">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 附近商家 -->
+<view class='sell'>
+  <view class='sell_box'>
+    <text class='lLine'></text>
+    <text class='text'>附近商家</text>
+    <text class='rLine'></text>
+  </view>
+</view>
+<!-- 商家列表 -->
+<view class='shopList'>
+   <view class='shop' bindtap='jump'>
+     <view class='l'>
+        <image src='/imgs/flower1.png'></image>
+     </view>
+     <view class='r'>
+        <text class='word'>老三家曲靖蒸饵丝万达店老三家曲靖蒸饵丝万达店</text>
+        <view class='grey'></view>
+        <view class='dis'>
+          <text>距离：</text>
+          <text>5.7698km</text>
+        </view>
+     </view> 
+   </view><!--shop-->
+   <view class='shop'>
+     <view class='l'>
+        <image src='/imgs/flower1.png'></image>
+     </view>
+     <view class='r'>
+        <text class='word'>老三家曲靖蒸饵丝万达店老三家曲靖蒸饵丝万达店</text>
+        <view class='grey'></view>
+        <view class='dis'>
+          <text>距离：</text>
+          <text>5.7698km</text>
+        </view>
+     </view> 
+   </view><!--shop-->
+   <view class='shop'>
+     <view class='l'>
+        <image src='/imgs/flower1.png'></image>
+     </view>
+     <view class='r'>
+        <text class='word'>老三家曲靖蒸饵丝万达店老三家曲靖蒸饵丝万达店</text>
+        <view class='grey'></view>
+        <view class='dis'>
+          <text>距离：</text>
+          <text>5.7698km</text>
+        </view>
+     </view> 
+   </view><!--shop-->
+</view><!--shopList-->

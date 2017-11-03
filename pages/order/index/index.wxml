@@ -1,0 +1,83 @@
+<!--pages/order/index/index.wxml-->
+<!-- 商家Logo，店铺名称 -->
+<view class='top'>
+    <view>
+        <image src='/imgs/circle_2.jpg'></image>
+    </view>
+    <view class='shop_info'>
+        <view class='name'>老三家曲靖蒸饵丝校场路店</view>
+        <view class='tip'>起送￥20  |  配送￥6</view>
+        <view  class='notice'>公告：欢迎光临老三家曲靖欢迎光临</view>
+    </view>
+</view><!--top结束-->
+<view class='foodList'>
+    <view class='foodType'>
+        <view class="pub {{colorNum==1?'bgWhite':''}}" bindtap='changeColor' data-num="1">精品热菜</view>
+        <view class="pub {{colorNum==2?'bgWhite':''}}" bindtap='changeColor' data-num="2">新品推荐</view>
+         <view class='pub'>精品热菜</view>
+        <view class='pub'>新品推荐</view>
+         <view class='pub'>精品热菜</view>
+        <view class='pub'>新品推荐</view>
+    </view><!--foodType-->
+    <view class='foodDetail'>
+        <view class='type'>精品热菜</view>
+        <view class='box'>
+            <view class='food'>
+                <view class='img'>
+                    <image src='/imgs/food.jpg'></image>
+                </view>
+                 <view class='info'>
+                    <view class='name'>炒拉面</view>
+                    <view class='ct'>主菜210g+时蔬+咸菜+米饭咸菜+米饭</view>
+                    <view class='price'>￥{{price}}/份</view>
+                </view> 
+                 <view class='btn'>
+                    <!-- <text class='line'></text> -->
+                    <text class='reduce' bindtap="reduce">-</text>
+                    <text class='num'>{{num}}</text>
+                    <text class='add' bindtap="add">+</text>
+                </view>  
+            </view><!--food结束-->
+            <view class='food'>
+                <view class='img'>
+                    <image src='/imgs/food1.jpg'></image>
+                </view>
+                 <view class='info'>
+                    <view class='name'>炒拉面</view>
+                    <view class='ct'>主菜210g+时蔬</view>
+                    <view class='price'>￥15/份</view>
+                </view> 
+                 <view class='btn'>
+                    <!-- <text class='line'></text> -->
+                    <text class='reduce'>-</text>
+                    <text class='num'>1</text>
+                    <text class='add'>+</text>
+                </view>  
+            </view><!--food结束-->
+        </view><!--box-->
+    </view><!--foodDetail-->
+</view><!--foodList结束-->
+<!-- 点击购物车的提示框 -->
+<view class='cartTip {{show}}'>
+    <view class='foodName'>
+        <text class='l'>杀猪菜</text><text class='r price'>￥{{sum}}</text>
+        <view class='btn'>
+                <text class='reduce' bindtap="reduce">-</text>
+                <text class='num'>{{num}}</text>
+                <text class='add' bindtap="add">+</text>
+        </view>  
+    </view>
+    <view><text class='l'>餐盒费</text><text class='r'>￥1</text></view>
+</view><!--cartTip-->
+<!-- 遮罩层 -->
+<view class='shade {{shadeShow}}' style='height:{{height}}px;width:{{width}}px'></view>
+
+<!-- 底部购物车 -->
+<view class='cart'>
+    <view class='imgBox'>
+      <image src='/imgs/shop_logo.png' bindtap="bindImg"></image>
+      <text class='red'>{{num}}</text>
+    </view>
+    <view class='l'>￥{{sum}}</view>
+    <view class="r {{num>0?'noOpcatity':''}}" bindtap="account">去结算</view>
+</view>
