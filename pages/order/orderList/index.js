@@ -1,22 +1,23 @@
-// pages/order/addOrder/index.js
+// pages/order/orderList/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    active:0,
+    percent:"0",
+    animation: 'animation0',
   },
-  // 选择收货地址
-  choseAddress:function(){
-    wx.navigateTo({
-      url: '/pages/address/addressList/index',
-    })
-  },
-  //提交订单
-  submitOrder:function(){
-    wx.navigateTo({
-      url: '/pages/order/orderList/index',
+  //点击订单类型
+  orderNavClick:function(e){
+    var that=this;
+    console.log(e);
+    var num=e.currentTarget.dataset.active;
+    var animation = 'animation' + num;
+    that.setData({
+      active:num,
+      animation: animation
     })
   },
   /**

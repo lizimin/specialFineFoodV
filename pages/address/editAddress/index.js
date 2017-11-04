@@ -1,23 +1,18 @@
-// pages/order/addOrder/index.js
+// pages/address/editAddress/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    items: [
+      { name: 'man', value: '先生',checked: 'true'  },
+      { name: 'woman', value: '女士', },
+    ]
   },
-  // 选择收货地址
-  choseAddress:function(){
-    wx.navigateTo({
-      url: '/pages/address/addressList/index',
-    })
-  },
-  //提交订单
-  submitOrder:function(){
-    wx.navigateTo({
-      url: '/pages/order/orderList/index',
-    })
+  //性别选择
+  radioChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
   },
   /**
    * 生命周期函数--监听页面加载

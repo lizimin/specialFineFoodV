@@ -84,7 +84,7 @@ changeColor:function(e){
 //点击结算按钮
 account:function(){
   wx.navigateTo({
-    url: '/pages/me/phone/index',
+    url: '/pages/order/addOrder/index',
   })
 },
   /**

@@ -11,11 +11,13 @@ Page({
   clickJudge:function(e){
     //获取url
     var that = this;
-    
-    var url = e.currentTarget.dataset.url;
-    //登录验证
-    var loginConfirm = app.globalData.loginConfirm;
-    loginConfirm(url);
+    wx.navigateTo({
+      url: '/pages/order/orderList/index',
+    })
+    // var url = e.currentTarget.dataset.url;
+    // //登录验证
+    // var loginConfirm = app.globalData.loginConfirm;
+    // loginConfirm(url);
   },
 
   /**
@@ -23,13 +25,11 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var score = app.globalData.userInfo.score;
-
-    if (app.globalData.loginStatus == false) {
-      wx.navigateTo({
-        url: '/pages/login/index'
-      })
-    };
+   // if (app.globalData.loginStatus == false) {
+      // wx.navigateTo({
+      //   url: '/pages/login/index'
+      // })
+    //};
     wx.getUserInfo({
       success: function (res) {
         var userInfo = res.userInfo
@@ -43,7 +43,7 @@ Page({
         that.setData({
           userImage: avatarUrl,
           userName: nickName,
-          score:score
+          //score:score
         });
       }
     })

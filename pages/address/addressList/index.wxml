@@ -1,20 +1,20 @@
 <!--pages/address/addressList/index.wxml-->
 <view class='addAddress'>
-   <view class='box'>
+   <view class='box' bindtap='addAddr'>
       <image src='/imgs/add_icon.png'></image>
       <text class='word'>新增收货地址</text>
       <text class='arrow'>></text>
    </view>
 </view><!--addAddress结束-->
 <view class='list'>
-    <view class='address'>
+    <view class='address' bindtap='addAddr'>
         <view>万达.昆明双塔南塔（2号门） 2508</view>
         <view>梦琪 女士 123456789</view>
         <view class='img'><image src='/imgs/edit.png'></image></view>
     </view><!--address-->
-    <view class='address'>
+    <view class='address' >
         <view>万达.昆明双塔南塔（2号门） 2508</view>
         <view>梦琪 女士 123456789</view>
-        <view class='img'><image src='/imgs/edit.png'></image></view>
+        <view class='img' ><image src='/imgs/edit.png'></image></view>
     </view><!--address-->
 </view><!--list-->

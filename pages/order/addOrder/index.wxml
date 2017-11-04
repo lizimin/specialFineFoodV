@@ -45,5 +45,5 @@
 <!-- 提交订单 -->
 <view class="submitOrder">
    <view class='sumPrice'>合计<text>￥17.5</text></view>
-   <view class='order'>提交订单</view>
+   <view class='order' bindtap='submitOrder'>提交订单</view>
 </view>

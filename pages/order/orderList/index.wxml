@@ -1,0 +1,42 @@
+<!--pages/order/orderList/index.wxml-->
+<!-- 导航栏 -->
+<view class='orderType'>
+    <text class="{{active==0?'on':''}}" data-active="0" bindtap="orderNavClick">全 部</text>
+    <text class="{{active==1?'on':''}}" data-active="1" bindtap="orderNavClick">待付款</text>
+    <text class="{{active==2?'on':''}}" data-active="2" bindtap="orderNavClick">待使用</text>
+    <text class="{{active==3?'on':''}}" data-active="3" bindtap="orderNavClick">退款中</text>
+    <text class="{{active==4?'on':''}}" data-active="4" bindtap="orderNavClick">已完成</text>
+    <view class="{{animation}}"></view> 
+</view>
+<!-- 订单列表 -->
+<view class='orderList'>
+    <view class='order'>
+        <view class='img'>
+            <image src='/imgs/food1.jpg'></image>
+        </view>
+        <view class='orderInfo'>
+            <view class='name'>青和小锅米线<text>待付款</text></view>
+            <view class='time'>下单时间 : 2107-10-12  11:30</view>
+            <view class='price'>￥73</view>
+        </view>
+        <view class='btns'>
+            <view class='again'>在来一单</view>
+            <view>立即付款</view>
+        </view>
+    </view><!--order结束-->
+    <view class='order'>
+        <view class='img'>
+            <image src='/imgs/food1.jpg'></image>
+        </view>
+        <view class='orderInfo'>
+            <view class='name'>青和小锅米线<text>待付款</text></view>
+            <view class='time'>下单时间 : 2107-10-12  11:30</view>
+            <view class='price'>￥73</view>
+        </view>
+        <view class='btns'>
+            <view class='again'>在来一单</view>
+            <view>立即付款</view>
+        </view>
+    </view><!--order结束-->
+    
+</view><!--orderList-->

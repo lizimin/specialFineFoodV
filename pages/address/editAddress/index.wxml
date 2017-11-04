@@ -1,0 +1,24 @@
+<!--pages/address/editAddress/index.wxml-->
+<view class='contacts'>联系人</view>
+<!-- 联系人信息 -->
+<view class='info'>
+    <view class='name'>姓名：<input type='text' placeholder='请输入姓名'/></view>
+    <view class='sex'>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view><!--sex结束-->
+    <view class='phone'>手机：<input type='text' placeholder='请输入收货手机号码'/></view>
+</view><!--info-->
+<view class='contacts'>收货地址</view>
+<view class='info'>
+    <view class='name'>小区/大厦/学校：<input type='text' placeholder='请输入地址'/></view>
+    <view class='phone card'>楼号/门牌号：<input type='text' placeholder='例如：16号楼417室'/></view>
+</view><!--info-->
+
+<view class='btn'>
+  确定
+</view>
+
