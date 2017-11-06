@@ -58,7 +58,7 @@
     </view><!--foodDetail-->
 </view><!--foodList结束-->
 <!-- 点击购物车的提示框 -->
-<view class='cartTip {{show}}'>
+<view class='cartTip {{show}}' bindtap="hidCart">
     <view class='foodName'>
         <text class='l'>杀猪菜</text><text class='r price'>￥{{sum}}</text>
         <view class='btn'>

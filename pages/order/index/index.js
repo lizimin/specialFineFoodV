@@ -87,6 +87,25 @@ account:function(){
     url: '/pages/order/addOrder/index',
   })
 },
+//点击cart消失
+hidCart:function(){
+  var that = this;
+  var _flag = that.data.flag;
+  if (_flag) {
+    that.setData({
+      show: "show",
+      flag: false,
+      shadeShow: 'shadeShow'
+    })
+  }
+  if (!_flag) {
+    that.setData({
+      show: "",
+      flag: true,
+      shadeShow: ''
+    })
+  }
+},
   /**
    * 生命周期函数--监听页面加载
    */

@@ -31,6 +31,45 @@ Page({
   },
   onLoad: function () {
     var that=this;
+    console.log('----');
+    console.log(that.data);
+    console.log(that.data.shoplat);
+    //地址解析，把地址解析成经纬度
+    qqmapsdk.geocoder({
+      address: that.data.shopAddress,
+      success: function (res) {
+        console.log("昆明站");
+        console.log(res.result.location);
+        that.setData({
+          shoplng: res.result.location.lng,
+          shoplat: res.result.location.lat,
+        })
+      },
+      fail: function (res) {
+        // console.log(res);
+      }
+    });
+    //计算距离
+    // console.log("昆明站经纬度");
+    // console.log(that.data);
+    // console.log(that.data.shoplat);
+    qqmapsdk.calculateDistance({
+
+      to: [
+        {
+          latitude: that.data.shoplat,
+          longitude: that.data.shoplng,
+        }
+      ],
+      success: function (res) {
+        console.log("success");
+        console.log(res);
+      },
+      fail: function (res) {
+        console.log("fali");
+        console.log(res);
+      },
+    });
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -57,48 +96,17 @@ Page({
         }
       })
     }
-    wx.getLocation({
-      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-      success: function (res) {
-        that.setData({
-          personlng: res.longitude,
-          personlat: res.longitude,
-        })
-      }
-    })
+    // wx.getLocation({
+    //   type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+    //   success: function (res) {
+    //     that.setData({
+    //       personlng: res.longitude,
+    //       personlat: res.longitude,
+    //     })
+    //   }
+    // })
     
-    //地址解析，把地址解析成经纬度
-    qqmapsdk.geocoder({
-      address: that.data.shopAddress,
-      success: function (res) {
-        console.log("昆明站");
-       console.log(res.result.location);
-        that.setData({
-          shoplng: res.result.location.lng,
-          shoplat: res.result.location.lat,
-        })
-      },
-      fail: function (res) {
-        console.log(res);
-      }
-    });
-  //计算距离
-    qqmapsdk.calculateDistance({
-      to: [
-        {
-          latitude: that.data.shoplat,
-          longitude: that.data.shoplng
-        }
-      ],
-      success: function (res) {
-        console.log("success");
-        console.log(res);
-      },
-      fail: function (res) {
-        console.log("fali");
-        console.log(res);
-      },
-    });
+   
     
   },
   getUserInfo: function(e) {

@@ -10,11 +10,11 @@
     <view class='address' bindtap='addAddr'>
         <view>万达.昆明双塔南塔（2号门） 2508</view>
         <view>梦琪 女士 123456789</view>
-        <view class='img'><image src='/imgs/edit.png'></image></view>
+        <view class='img'><image src='/imgs/edit_icon.png'></image></view>
     </view><!--address-->
     <view class='address' >
         <view>万达.昆明双塔南塔（2号门） 2508</view>
         <view>梦琪 女士 123456789</view>
-        <view class='img' ><image src='/imgs/edit.png'></image></view>
+        <view class='img' ><image src='/imgs/edit_icon.png'></image></view>
     </view><!--address-->
 </view><!--list-->

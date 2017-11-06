@@ -13,4 +13,4 @@ page{background: #efefef;}
 .list .address view:first-child{margin-bottom:10rpx;}
 .list .address:last-child{border-bottom:none;}
 .list .address .img{position: absolute;top:34rpx;right:0rpx;}
-.list .address .img image{width:50rpx;height:50rpx;}
+.list .address .img image{width:48rpx;height:48rpx;}
