@@ -1,3 +1,25 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //index.js
 //获取应用实例
 const app = getApp(); 
@@ -31,15 +53,15 @@ Page({
   },
   onLoad: function () {
     var that=this;
-    console.log('----');
-    console.log(that.data);
-    console.log(that.data.shoplat);
+   // console.log('----');
+   // console.log(that.data);
+   // console.log(that.data.shoplat);
     //地址解析，把地址解析成经纬度
     qqmapsdk.geocoder({
       address: that.data.shopAddress,
       success: function (res) {
-        console.log("昆明站");
-        console.log(res.result.location);
+       // console.log("昆明站");
+        //console.log(res.result.location);
         that.setData({
           shoplng: res.result.location.lng,
           shoplat: res.result.location.lat,
@@ -62,12 +84,12 @@ Page({
         }
       ],
       success: function (res) {
-        console.log("success");
-        console.log(res);
+       // console.log("success");
+       // console.log(res);
       },
       fail: function (res) {
-        console.log("fali");
-        console.log(res);
+        //console.log("fali");
+       // console.log(res);
       },
     });
     if (app.globalData.userInfo) {
@@ -88,12 +110,28 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
+          wx.request({
+            url: 'http://www.diancan.com/weixin.php/wechat/saveUserinfo', //仅为示例，并非真实的接口地址
+            data: {
+              rawData:res.rawData,
+              openid:wx.getStorageSync('openid'),
+            },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded' // 默认值
+            },
+            method:'POST',
+            success: function (res) {
+                 if(res.data.code==0){
+                   console.log(res.data.info);
+                 }
+            }
+          })
           app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
           })
-        }
+        },
       })
     }
     // wx.getLocation({
